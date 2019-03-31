@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://rocky-forest-59668.herokuapp.com'
 };

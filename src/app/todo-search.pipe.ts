@@ -11,13 +11,12 @@ interface Filter {
 })
 export class TodoSearchPipe implements PipeTransform {
   transform(todos: Todo[], filter: Filter): any {
-    return todos.filter(todo => {
-      console.log(filter);
-      return filter.hideCompleted
+    return todos.filter(todo =>
+      filter.hideCompleted
         ? !todo.completed
         : filter.title !== ''
         ? todo.title.includes(filter.title)
-        : todo;
-    });
+        : todo
+    );
   }
 }

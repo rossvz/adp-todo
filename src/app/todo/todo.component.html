@@ -1,0 +1,17 @@
+<div class="todo-container" [ngClass]="{ complete: todo.completed }">
+  <div class="todo-title">
+    <h1><mat-icon *ngIf="todo.completed">done</mat-icon>{{ todo.title }}</h1>
+
+    <button mat-flat-button (click)="edit()"><mat-icon>edit</mat-icon></button>
+  </div>
+
+  <div class="todo-description">{{ todo.description }}</div>
+  <div class="todo-buttons">
+    <button class="todo-delete-button" mat-flat-button (click)="delete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <mat-button-toggle class="todo-complete-button" (click)="toggleTodo(todo)">
+      {{ todo.completed ? 'Undo' : 'Done' }}</mat-button-toggle
+    >
+  </div>
+</div>

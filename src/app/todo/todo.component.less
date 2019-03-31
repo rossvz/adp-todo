@@ -1,0 +1,43 @@
+@import "../../colors";
+.todo-container {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  transition: opacity 300ms;
+  height: 100%;
+  &.complete {
+    opacity: 0.4;
+  }
+}
+
+
+.todo-title{
+  display:flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+
+.todo-description{
+  margin: 5%;
+}
+
+.todo-buttons{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .todo-delete-button{
+    flex:1;
+  }
+  .todo-complete-button{
+    flex: 4;
+    background: @ADP_GREEN;
+    color:white;
+  }
+}
+
+

@@ -1,0 +1,49 @@
+<div class="todo-list-container">
+  <app-edit-todo
+    (closed)="onClose($event)"
+    (saved)="onSave($event)"
+    *ngIf="editingTodo"
+    [todo]="editingTodo"
+  ></app-edit-todo>
+  <div class="todo-list-title-bar">
+    <form>
+      <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input
+          matInput
+          placeholder="Search"
+          (input)="handleSearchChange($event)"
+          name="searchTerm"
+        />
+      </mat-form-field>
+      <mat-slide-toggle
+        (change)="toggleHideCompleted()"
+        [checked]="filter.hideCompleted"
+        >Hide Completed</mat-slide-toggle
+      >
+      <!--      <mat-form-field>-->
+      <!--        <mat-label>Hide Completed</mat-label>-->
+      <!--        <mat-checkbox-->
+      <!--          [checked]="filter.hideCompleted"-->
+      <!--          (change)="toggleHideCompleted()"-->
+      <!--        ></mat-checkbox>-->
+      <!--      </mat-form-field>-->
+    </form>
+    <button (click)="newTodo()" mat-raised-button class="add-todo-button">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="todo-list-items">
+    <div
+      class="todo-list-item"
+      *ngFor="let todo of (todos | todoSearch: filter)"
+    >
+      <app-todo
+        [todo]="todo"
+        (editing)="onEdit($event)"
+        (saved)="onSave($event)"
+        (deleted)="onDelete($event)"
+      ></app-todo>
+    </div>
+  </div>
+</div>

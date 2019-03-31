@@ -1,0 +1,43 @@
+<div class="edit-todo-container">
+  <div class="edit-todo-modal animated fadeInDown">
+    <form class="edit-todo-form">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="editingTodo.title"
+          name="title"
+          placeholder="Title"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="editingTodo.description"
+          name="Description"
+          placeholder="Description"
+          maxlength="50"
+        />
+      </mat-form-field>
+      <mat-checkbox
+        (change)="editingTodo.complete = !editingTodo.complete"
+        [checked]="editingTodo.complete"
+        >Completed</mat-checkbox
+      >
+      <div class="edit-todo-form-buttons">
+        <button type="button" mat-raised-button (click)="close()">
+          Cancel
+        </button>
+        <button
+          class="save-button"
+          type="button"
+          mat-raised-button
+          (click)="save()"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

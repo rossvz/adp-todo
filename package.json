@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "serve ./dist/adp-todo",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-
   },
   "private": true,
   "dependencies": {
@@ -25,6 +24,7 @@
     "core-js": "^2.5.4",
     "ramda": "^0.26.1",
     "rxjs": "~6.3.3",
+    "serve": "^10.1.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
